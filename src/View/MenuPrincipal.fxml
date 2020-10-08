@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane prefHeight="472.0" prefWidth="756.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerMenuPrincipal">
+   <children>
+
+   
+   
+          <Pane fx:id="paneBoth" prefHeight="400.0" prefWidth="600.0" visible="false">
+           <TabPane layoutX="14.0" layoutY="37.0" prefHeight="409.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+               <tabs>
+                   <Tab text="Individual">
+                       <content>
+                           <AnchorPane prefHeight="304.0" prefWidth="556.0">
+                               <children>
+                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="189.0" prefWidth="556.0">
+                                       <children>
+                                           <Label layoutX="38.0" layoutY="33.0" text="Nombre" />
+                                           <Label layoutX="42.0" layoutY="115.0" text="DPI" />
+                                           <Label layoutX="290.0" layoutY="73.0" prefHeight="18.0" prefWidth="61.0" text="Direccion" />
+                                           <Label layoutX="42.0" layoutY="73.0" text="NIT" />
+                                           <TextField fx:id="Nombre" layoutX="101.0" layoutY="26.0" text="Nombre" />
+                                           <TextField fx:id="Apellido" layoutX="366.0" layoutY="24.0" text="Apellido" />
+                                           <TextField fx:id="Nit" layoutX="101.0" layoutY="69.0" text="Nit" />
+                                           <TextField fx:id="Direccion" layoutX="366.0" layoutY="69.0" text="Direccion" />
+                                           <TextField fx:id="DPI" layoutX="101.0" layoutY="111.0" text="DPI" />
+                                           <Label layoutX="290.0" layoutY="36.0" text="Apellido" />
+                                           <Button layoutX="228.0" layoutY="174.0" mnemonicParsing="false" onAction="#AgregarClienteIndividual" prefHeight="32.0" prefWidth="109.0" text="AGREGAR" />
+                                       </children>
+                                   </AnchorPane>
+                               </children>
+                           </AnchorPane>
+                       </content>
+                   </Tab>
+                   <Tab text="Empresa">
+                       <content>
+                           <AnchorPane prefHeight="304.0" prefWidth="556.0">
+                               <children>
+                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="189.0" prefWidth="556.0">
+                                       <children>
+                                           <Label layoutX="38.0" layoutY="33.0" text="Nombre" />
+                                           <Label layoutX="36.0" layoutY="95.0" text="Contacto" />
+                                           <Label layoutX="295.0" layoutY="61.0" prefHeight="18.0" prefWidth="61.0" text="Direccion" />
+                                           <Label layoutX="38.0" layoutY="61.0" text="NIT" />
+                                           <TextField fx:id="NombreE" layoutX="101.0" layoutY="26.0" text="Nombre" />
+                                           <TextField fx:id="ApellidoE" layoutX="366.0" layoutY="26.0" text="Apellido" />
+                                           <TextField fx:id="NitE" layoutX="101.0" layoutY="57.0" text="Nit" />
+                                           <TextField fx:id="DireccionE" layoutX="366.0" layoutY="58.0" text="Direccion" />
+                                           <TextField fx:id="Contacto" layoutX="101.0" layoutY="91.0" text="Contacto" />
+                                 <TextField fx:id="Descuento" layoutX="366.0" layoutY="92.0" text="0" />
+                                           <Label layoutX="295.0" layoutY="30.0" text="Apellido" />
+                                 <Label layoutX="295.0" layoutY="95.0" text="Descuento" />
+                                       </children>
+                                   </AnchorPane>
+                                     <Button layoutX="254.0" layoutY="185.0" mnemonicParsing="false" onAction="#AgregarClienteEmpresa" prefHeight="32.0" prefWidth="109.0" text="AGREGAR" />
+
+                                  </children>
+                           </AnchorPane>
+                       </content>
+                   </Tab>
+               </tabs>
+           </TabPane>
+       </Pane>
+
+
+
+
+       <Pane fx:id="paneCliente" layoutX="6.0" layoutY="35.0" prefHeight="437.0" prefWidth="741.0" visible="false">
+
+           <TableView fx:id="tblClientesIndividuales" layoutX="8.0" layoutY="70.0" prefHeight="300.0" prefWidth="600.0" visible="false">
+        <columns>
+          <TableColumn fx:id="tfid" prefWidth="25.0" text="id" />
+          <TableColumn fx:id="tfNombre" prefWidth="69.0" text="Nombre" />
+          <TableColumn fx:id="tfApellido" prefWidth="78.0" text="Apellido" />
+          <TableColumn fx:id="tfNit" prefWidth="83.0" text="Nit" />
+          <TableColumn fx:id="tfDireccion" prefWidth="190.0" text="Direccion" />
+          <TableColumn fx:id="tfDPI" prefWidth="120.0" text="DPI" />
+        </columns>
+      </TableView>
+
+           <TableView fx:id="tblClientesEmpresa" layoutX="8.0" layoutY="70.0" prefHeight="300.0" prefWidth="600.0" visible="false">
+               <columns>
+                   <TableColumn fx:id="tfidE" prefWidth="25.0" text="id" />
+                   <TableColumn fx:id="tfNombreE" prefWidth="69.0" text="Nombre" />
+                   <TableColumn fx:id="tfApellidoE" prefWidth="78.0" text="Apellido" />
+                   <TableColumn fx:id="tfNitE" prefWidth="68.0" text="Nit" />
+                   <TableColumn fx:id="tfDireccionE" prefWidth="144.0" text="Direccion" />
+                   <TableColumn fx:id="tfContacto" prefWidth="110.0" text="Contacto" />
+                   <TableColumn fx:id="tfDescuento" prefWidth="105.0" text="Descuento" />
+               </columns>
+           </TableView>
+
+           <TableView fx:id="tblClientesIndivualesYempresa" layoutX="8.0" layoutY="70.0" prefHeight="300.0" prefWidth="727.0" visible="false">
+               <columns>
+                   <TableColumn fx:id="tfid2" prefWidth="25.0" text="id" />
+                   <TableColumn fx:id="tfNombre2" prefWidth="69.0" text="Nombre" />
+                   <TableColumn fx:id="tfApellido2" prefWidth="78.0" text="Apellido" />
+                   <TableColumn fx:id="tfNit2" prefWidth="63.0" text="Nit" />
+                   <TableColumn fx:id="tfDireccion2" prefWidth="149.0" text="Direccion" />
+                   <TableColumn fx:id="tfDPI2" prefWidth="144.0" text="DPI" />
+                   <TableColumn fx:id="tfContacto2" prefWidth="110.0" text="Contacto" />
+                   <TableColumn fx:id="tfDescuento2" prefWidth="105.0" text="Descuento" />
+               </columns>
+           </TableView>
+
+         <Button layoutX="29.0" layoutY="37.0" mnemonicParsing="false" onAction="#MostratClientesIndividuales" text="Clientes individuales" />
+         <Button layoutX="239.0" layoutY="37.0" mnemonicParsing="false" onAction="#MostrarClientesEmpresa" text="Clientes de Empresa" />
+         <Button layoutX="434.0" layoutY="37.0" mnemonicParsing="false" onAction="#MostrarAmbosClientes" text="Ambos Clientes" />
+       </Pane>
+
+
+       <Pane fx:id="PaneEliminarCliente" layoutX="6.0" layoutY="35.0" prefHeight="400.0" prefWidth="600.0" visible="false">
+           <Label layoutX="26.0" layoutY="74.0" text="id del cliente" />
+           <TextField fx:id="idEliminarCliente" layoutX="123.0" layoutY="70.0" />
+           <Button layoutX="290.0" layoutY="67.0" mnemonicParsing="false" onAction="#EliminarCliente" prefHeight="32.0" prefWidth="109.0" text="ELIMINAR" />
+       </Pane>
+
+
+       <Pane fx:id="paneProducto" layoutX="6.0" layoutY="35.0" prefHeight="400.0" prefWidth="600.0" visible="false">
+           <Label layoutX="32.0" layoutY="30.0" text="Nombre Producto" />
+           <Label layoutX="32.0" layoutY="58.0" prefHeight="18.0" prefWidth="96.0" text="Precio Unitario" />
+           <TextField fx:id="NombreProducto" layoutX="148.0" layoutY="26.0" text="Nuevo Producto" />
+           <TextField fx:id="PrecioUnitario" layoutX="148.0" layoutY="62.0" text="1000" />
+           <TextField fx:id="CajaTextoBuscarProducto" layoutX="94.0" layoutY="182.0" prefHeight="18.0" prefWidth="59.0" text="id" />
+           <Button fx:id="BotonAgregarProducto" layoutX="332.0" layoutY="42.0" mnemonicParsing="false" onAction="#AgregarProducto" prefHeight="32.0" prefWidth="109.0" text="AGREGAR" visible="false" />
+           <Button fx:id="BotonEditarProducto" layoutX="332.0" layoutY="42.0" mnemonicParsing="false" onAction="#EditarProducto" prefHeight="32.0" prefWidth="109.0" text="ACTUALIZAR" visible="false" />
+           <Button fx:id="BotonBuscarProducto" layoutX="68.0" layoutY="209.0" mnemonicParsing="false" onAction="#BuscarProducto" prefHeight="25.0" prefWidth="109.0" text="Buscar Producto" visible="false" />
+
+       </Pane>
+
+
+       <Pane fx:id="paneVerProducto" layoutX="6.0" layoutY="35.0" prefHeight="400.0" prefWidth="332.0" visible="false">
+           <TableView fx:id="tblProductos" layoutX="14.0" layoutY="14.0" prefHeight="300.0" prefWidth="308.0">
+               <columns>
+                   <TableColumn fx:id="tfIdProducto" prefWidth="40.0" text="Id" />
+                   <TableColumn fx:id="tfNombreProducto" prefWidth="145.0" text="Nombre" />
+                   <TableColumn fx:id="tfPrecio" prefWidth="115.0" text="Precio unitario" />
+               </columns>
+           </TableView>
+       </Pane>
+
+
+       <Pane fx:id="PaneEliminarProducto" layoutX="6.0" layoutY="35.0" prefHeight="400.0" prefWidth="600.0" visible="false">
+           <Label layoutX="26.0" layoutY="74.0" text="id del producto" />
+           <TextField fx:id="idEliminarProducto" layoutX="123.0" layoutY="70.0" />
+           <Button layoutX="290.0" layoutY="67.0" mnemonicParsing="false" onAction="#EliminarProducto" prefHeight="32.0" prefWidth="109.0" text="ELIMINAR" />
+       </Pane>
+
+
+
+
+      <Button layoutX="14.0" layoutY="10.0" mnemonicParsing="false" onAction="#close" text="Cerrar" />
+      <MenuBar fx:id="menu" layoutX="62.0" layoutY="10.0">
+        <menus>
+
+
+
+            <Menu mnemonicParsing="false" text="Clientes">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#MostrarVentanaAgregarCliente" text="Agregar Cliente" />
+              <MenuItem mnemonicParsing="false" onAction="#MostrarEliminarCliente" text="Eliminar Cliente" />
+              <MenuItem mnemonicParsing="false" onAction="#ModificarCliente" text="Modificar Cliente" />
+              <MenuItem mnemonicParsing="false" onAction="#VisualizarClientes" text="Visualizar Clientes" />
+            </items>
+          </Menu>
+
+
+
+
+
+            <Menu mnemonicParsing="false" text="Productos">
+                <items>
+                    <MenuItem mnemonicParsing="false" onAction="#VisualizarAgregarProducto" text="Agregar Producto" />
+                    <MenuItem mnemonicParsing="false" onAction="#MostrarEliminarProducto" text="Eliminar Producto" />
+                    <MenuItem mnemonicParsing="false" onAction="#VisualizarEditarProducto" text="Editar Producto" />
+                    <MenuItem mnemonicParsing="false" onAction="#MostrarListaDeProductos" text="Visualizarproductos" />
+                </items>
+            </Menu>
+
+
+            <Menu mnemonicParsing="false" text="Ordenes de compra">
+                <items>
+                    <MenuItem mnemonicParsing="false" onAction="#AgregarOrdenCompra" text="Agregar orden de compra" />
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</Pane>
